@@ -1,0 +1,59 @@
+{
+  "_help": [
+    "Paths are relative to work_folder (or absolute).",
+    "{unit} = unit code, {mm} = month (09), {yy} = short year (26), {yyyy} = year (2026).",
+    "{sub} = the unit's 'sub' value (e.g. an extra subfolder for that unit).",
+    "* matches any text (add_ga_U1*.dbf also finds add_ga_U1_0926_1.dbf).",
+    "monthly_source = folder with the raw monthly files ('Fetch files' copies them here).",
+    "amount_field = numeric field totalled in the report.",
+    "cross_check_fields = fields summed separately to cross-check amount_field."
+  ],
+  "work_folder": "./sample_data",
+  "monthly_source": "",
+  "amount_field": "AMOUNT",
+  "cross_check_fields": [
+    "AMT_BASE",
+    "AMT_BONUS",
+    "AMT_OTHER"
+  ],
+  "record_key_field": "ACCOUNT",
+  "exclusion_key_field": "ACCOUNT",
+  "units": {
+    "U1": {
+      "name": "Unit 1",
+      "exclusions": "exclusions_U1.dbf",
+      "sub": ""
+    },
+    "U2": {
+      "name": "Unit 2",
+      "exclusions": "exclusions_U2.dbf",
+      "sub": "unit2/"
+    }
+  },
+  "groups": [
+    {
+      "name": "Group A",
+      "folder": "group_a",
+      "file_name": "base_ga_{unit}_{mm}{yy}*.dbf",
+      "base": "group_a/base_ga_{unit}_{mm}{yy}*.dbf",
+      "supplement": "supplements/{mm}{yy}/{sub}sup_ga_{mm}{yy}.dbf",
+      "additions": "additions/add_ga_{unit}*.dbf"
+    },
+    {
+      "name": "Group B",
+      "folder": "group_b",
+      "file_name": "base_gb_{unit}_{mm}{yy}*.dbf",
+      "base": "group_b/base_gb_{unit}_{mm}{yy}*.dbf",
+      "supplement": "supplements/{mm}{yy}/{sub}sup_gb_{mm}{yy}.dbf",
+      "additions": "additions/add_gb_{unit}*.dbf"
+    },
+    {
+      "name": "Group C",
+      "folder": "group_c",
+      "file_name": "base_gc_{unit}_{mm}{yy}*.dbf",
+      "base": "group_c/base_gc_{unit}_{mm}{yy}*.dbf",
+      "supplement": "supplements/{mm}{yy}/{sub}sup_gc_{mm}{yy}.dbf",
+      "additions": "additions/add_gc_{unit}*.dbf"
+    }
+  ]
+}

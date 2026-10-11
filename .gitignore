@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+*.spec
+# personal settings and generated output
+config.json
+sample_data/
+OUTPUT_*/
+# never commit real data
+*.dbf
+*.cdx
+*.fpt
+!tests/fixtures/*.dbf

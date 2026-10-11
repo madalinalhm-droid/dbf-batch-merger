@@ -1,0 +1,6 @@
+.git
+__pycache__
+.pytest_cache
+sample_data
+config.json
+*.dbf
