@@ -8,6 +8,8 @@ with a guided, two-step workflow that runs every check before anything is writte
 > Built from a real-world payment-file workflow and published here in a generic
 > form. All data in this repository is fictitious.
 
+![DBF Batch Merger – both stages done, every cross-check matched](docs/screenshot.png)
+
 ## The problem
 
 Every month, each data provider ("group") sends a base file. Before the data can
